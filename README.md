@@ -1,9 +1,10 @@
 Wise
 ----
 
-Wise is a wikipedia dump search engine
+[WIkipedia](https://en.wikipedia.org/wiki/Main_Page)-[dump](https://dumps.wikimedia.org/enwiki/)-Search-Engine [WISE]
 
-Made by Arjun Nemani (20161027)
+Made by [Arjun Nemani](https://nemani.dev) for the [Information Retrieval Course at IIIT Hyderabad](https://www.facebook.com/iiit.ire/)
 
-IIIT Hyderabad - Information Retrevial and Extraction Course
+
+![WISE](logo.png)
 
