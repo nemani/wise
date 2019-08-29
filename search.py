@@ -1,37 +1,22 @@
 import sys
-
-
-def read_file(testfile):
-    with open(testfile, 'r') as file:
-        queries = file.readlines()
-    return queries
-
-
-def write_file(outputs, path_to_output):
-    '''outputs should be a list of lists.
-        len(outputs) = number of queries
-        Each element in outputs should be a list of titles corresponding to a particular query.'''
-    with open(path_to_output, 'w') as file:
-        for output in outputs:
-            for line in output:
-                file.write(line.strip() + '\n')
-            file.write('\n')
-
-
-def search(path_to_index, queries):
-    '''Write your code here'''
-    pass
-
-
-def main():
-    path_to_index = sys.argv[1]
-    testfile = sys.argv[2]
-    path_to_output = sys.argv[3]
-
-    queries = read_file(testfile)
-    outputs = search(path_to_index, queries)
-    write_file(outputs, path_to_output)
-
+from wise.index import InvertedIndex
 
 if __name__ == '__main__':
-    main()
+
+    index_path = sys.argv[1]
+    query_path = sys.argv[2]
+    out_path = sys.argv[3]
+
+    print("Index will be loaded from {}".format(index_path))
+
+    index = InvertedIndex()
+    index.load_from_file(index_path)
+
+    qf = open(query_path, 'r')
+    out = open(out_path, 'w')
+
+    for query in qf.readlines():
+        titles = index.search(query)
+        out.write("\n".join(titles))
+        out.write("\n\n")
+
