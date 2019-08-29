@@ -6,5 +6,5 @@ Wise
 Made by [Arjun Nemani](https://nemani.dev) for the [Information Retrieval Course at IIIT Hyderabad](https://www.facebook.com/iiit.ire/)
 
 
-![WISE](logo.png)
+![WISE](./supporting_files/logo.png)
 
